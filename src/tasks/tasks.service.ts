@@ -25,7 +25,7 @@ export class TasksService {
   update(id: number, updateTaskDto: UpdateTaskDto) {
     const taskIndex = this.tasks.findIndex(task => task.id === id);
     if (taskIndex === -1) {
-      return 'task with id ${id} not found';
+      return `task with id ${id} not found`;
     }
     this.tasks[taskIndex] = { ...this.tasks[taskIndex], ...updateTaskDto };
     return this.tasks[taskIndex];
@@ -34,9 +34,9 @@ export class TasksService {
   remove(id: number) {
     const taskIndex = this.tasks.findIndex(task => task.id === id);
     if (taskIndex === -1) {
-      return 'task with id ${id} not found';
+      return `task with id ${id} not found`;
     }
     this.tasks.splice(taskIndex, 1);
-    return 'this action removes a #${id} task';
+    return `this action removes a #${id} task`;
   }
 }
